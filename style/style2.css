@@ -1,0 +1,21 @@
+table{
+   width: 400px;
+   height: 400px;
+    margin: auto;
+    border-spacing: 0;
+}
+td{
+    border: 1px solid black;
+}
+.yellow{
+    background-color: yellow;
+}
+.red{
+    background-color: red;
+}
+.black{
+    background-color: black;
+}
+.blue{
+    background-color: blue;
+}

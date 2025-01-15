@@ -1,0 +1,43 @@
+.table{
+    width: 75%;
+    text-align: center;
+    border-spacing: 0;
+    margin: auto;
+}
+.td{
+    height: 50px;
+    width: 33.33%;
+    padding: 0;
+    border: 1px solid black;
+}
+.cell{
+    height: 200px;
+    width: 33.33%;
+    padding: 0;
+    border: 1px solid black
+}
+.parent{
+    width: 100%;
+    text-align: center;
+    border-spacing: 0;
+    margin: auto;
+}
+td{
+    height: 50px;
+    border: 1px solid black;
+}
+.child{
+    width: 80%;
+    text-align: center;
+    border-spacing: 0;
+    margin: auto;
+}
+.cell1{
+    height: 200px;
+}
+.cell2{
+    width: 28%;
+}
+
+
+
