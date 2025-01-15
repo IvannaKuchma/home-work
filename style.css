@@ -1,0 +1,34 @@
+div > p{
+    background-color: yellow;
+}
+h1{
+    background-color: aqua;
+    color: blueviolet;
+}
+.citi{
+    background-color: aquamarine;
+}
+#Itali{
+    background-color: beige;
+}
+div > img{
+    border: 10px solid red;
+}
+nav .blog-navigation{
+    background-color: violet;
+}
+div.main>p{
+    background-color: burlywood;
+}
+div .content em+a{
+    background-color: cadetblue;
+}
+div .text::first-line{
+    background-color: chartreuse;
+}
+div #type em~a{
+    background-color: chocolate;
+}
+input[type="password"]{
+    background-color: coral;
+}
