@@ -1,0 +1,34 @@
+div{
+    width: 500px;
+    height: 100px;
+    border: 2px solid black;
+    background-color: aqua;
+}
+span{
+    border: 5 px solid red;
+    background-color: brown; 
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.box{
+    border: 20 px solid rgb(154, 182, 54);
+    background-color: rgb(38, 26, 43);
+}
+.block{
+    width: 300px;
+    height: 200px;
+    border: 5px solid green;
+    background-color: chartreuse;
+}
+img{
+    width: 300px;
+    height: 200px; 
+    float: left; 
+}
+h1{
+    width: 1000px;
+    height: 100px;
+    text-align: center;
+}
+

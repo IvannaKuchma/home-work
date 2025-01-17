@@ -1,0 +1,36 @@
+.block{
+    width: 1500px;
+    height: 2500px;
+    border: 5px solid red;
+}
+.box{
+    width: 600px;
+    height: 500px;
+    position: relative;
+    background-color: aqua;
+}
+.box2{
+    width: 60px;
+    height: 60px;
+    position: fixed;
+    background-color: aquamarine;
+}
+img{
+    width: 200px;
+    height: 200px;
+    position: sticky;
+    top: 750px;
+}
+.box3{
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background-color: blue;
+}
+.box4{
+    width: 200px;
+    height: 200px;
+    position: static;
+    background-color: blueviolet;
+}
+
