@@ -1,0 +1,54 @@
+.content{
+  max-width: 1280px;
+  border: 5px solid black;
+  background-color: aquamarine;
+}
+.container {
+  width: 100%;
+  margin-bottom: 20px;
+  overflow: hidden; 
+}
+.block {
+  width: 20px;
+  height: 50px;
+  background-color: grey;
+  margin-bottom: 10px;
+  font-size: 16px;
+  color: #333;
+  margin: 10px;
+}
+.left {
+  float: left;
+  width: 20px;
+}
+.right {
+  float: right;
+}
+.container-2{
+  margin-left: 50%;
+}
+.small {
+  width: 50px;
+}
+.medium {
+  width: 200px;
+}
+.large {
+  width: 100px;
+}
+.big{
+  width: 100px;
+  height: 110px;
+}
+.box{
+  float: right;
+}
+.boxing{
+  float: right;
+  margin-right: 65%;
+}
+.small-2{
+  margin: 5px 0;
+  width: 50px;
+}
+
