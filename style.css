@@ -314,15 +314,15 @@ footer p:last-child{
         font-size: var(--gap-m);
         color: white;
         cursor: pointer;
-        position: relative;
+        position: absolute;
         z-index: 2;
     }
 
     .nav-mobile{
         display: none;
-        position: absolute;
+        position: relative;
         background: rgb(164, 162, 162);
-        width: 100%; 
+        width: 100px; 
         font-size: var(--gap-sm); 
     }
 
