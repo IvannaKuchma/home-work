@@ -368,21 +368,21 @@ footer p:last-child{
     }
         
     .third-section ul{
-        gap: var(--gap-sm);
+        gap: 15px;
     }
         
     .project-item{
         gap: var(--gap-sm);
-        height: var(--gap-m);
+        height: var(--gap);
         }
     
     .project-item p:first-child{
-        font-size: var(--gap-sm);
+        font-size: 15px;
         line-height: 5px;
     }
     
     .project-item p:last-child{
-        font-size: 7px;
+        font-size: 10px;
         line-height: 4px;
     }
     
@@ -397,8 +397,12 @@ footer p:last-child{
     }
     
     .second-section, .fourth-section{
-        padding: var(--gap-sm);
+        padding: var(--gap) 0 10px 0;
     }
+
+    .second-section p, .fourth-section p{
+        padding: 18px 0 10px;
+    } 
     
     iframe{
         width: 90%;
