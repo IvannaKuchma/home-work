@@ -132,15 +132,15 @@ h2{
 .project-item{
     display: flex;
     gap: 20px;
-    width: 150px;
+    width: 130px;
     height: 50px;
 }
 
 .project-item p:first-child{
     color: var(--white-color);
     font-weight: 500;
-    font-size: 21px;
-    line-height: 24px;
+    font-size: 19px;
+    line-height: 21px;
     max-width: auto;
     padding: 0 0 10px 0;
 }
@@ -148,8 +148,8 @@ h2{
 .project-item p:last-child{
     color: var(--white-color);
     font-weight: 400;
-    font-size: var(--font-size);
-    line-height: 26px;
+    font-size: 13зч;
+    line-height: 22px;
     max-width: auto;
     padding: 0;
 }
