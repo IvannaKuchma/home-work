@@ -1,0 +1,25 @@
+.main-section{
+    padding-top: $spacing[gap-lx];
+    padding-bottom: 140px;
+        h1{
+            @include mixinFonts ($colors[color-nickel], 500, 48px, 78px);
+
+                p{
+                    @include mixinFonts ($colors[color-nickel], 400, 16px, 26px);
+                    max-width: 540px;
+                    padding: 60px 0 65px;
+                        .bottom-write-me{
+                            padding: 19px 41px 20px;
+                            background: $color-metallic-blue;
+                            @include mixinFonts ($color-white, 400, 16px, 26px);
+                            color: $color-white;
+                            border: none; 
+                                &:hover{
+                                    opacity: 0.6 ;
+                                    transition: 0.3s ease-in-out;
+                                }
+                         }    
+                 }
+
+         }
+}

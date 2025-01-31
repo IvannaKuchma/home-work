@@ -1,0 +1,17 @@
+.second-section{
+    padding: 112px var(--gap) 100px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center; 
+
+        h2{
+            @include mixinFonts ($colors[color-nickel], 32px, 500, 37.5px, center);
+
+                p{
+                    @include mixinFonts ($colors[color-nickel], 400, 16px, 26px);
+                    max-width: 540px;
+                    padding: 0 0 40px;
+                }
+            }
+}
