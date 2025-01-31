@@ -1,0 +1,24 @@
+$colors : (
+    color-black: #000,
+    color-white: #fff,
+    color-metallic-blue: #34547A,
+    color-nickel: #727272,
+    color-bright-gray: #EEEFF1,
+    );
+
+$spacing:(
+    gap: 20px,
+    gap-s: 25px,
+    gap-l: 50px,
+    gap-m: 15px,
+    gap-lg: 40px,
+    gap-lx: 80px,
+    gap-sm: 10px,
+);
+
+$size-responsive:(
+    xs: 0,
+    small: 599px,
+    medium: 600px,
+    large: 1023px,
+);
