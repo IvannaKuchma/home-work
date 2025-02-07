@@ -1,0 +1,29 @@
+@keyframes change_fill {
+    0% {
+        fill: #000;
+    }
+    50% {
+        fill: #f0f;
+    }
+    100% {
+        fill: #f00;
+    }
+}
+
+@keyframes popup {
+    0% {
+        transform: scale(0);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+.circ{
+    animation: change_fill 1s, popup 2s;
+    fill: #f0f; transition: 3s;
+}
+
+.circ:hover, .circ:focus, .circ:active{
+    filter: invert(150%) sepia(100%) saturate(7487%) hue-rotate(338deg) brightness(50%) contrast(70%);
+}
