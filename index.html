@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Мій сайт на Tailwind</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 text-gray-900">
+    <header class="bg-white shadow-md">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <h1 class="text-2xl font-bold">Мій Сайт</h1>
+            <nav>
+                <ul class="flex space-x-6">
+                    <li><a href="#about" class="hover:text-blue-500">Про нас</a></li>
+                    <li><a href="#contact" class="hover:text-blue-500">Контакти</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <section class="text-center py-20 bg-blue-500 text-white">
+        <h2 class="text-4xl font-bold mb-4">Ласкаво просимо!</h2>
+        <p class="text-lg mb-6">Простий сайт з використанням Tailwind CSS</p>
+        <a href="#about" class="px-6 py-3 bg-white text-blue-500 rounded-lg shadow-md font-semibold hover:bg-gray-200">
+            Дізнатися більше
+        </a>
+    </section>
+
+    <section id="about" class="container mx-auto px-6 py-20">
+        <h2 class="text-3xl font-bold text-center mb-6">Про нас</h2>
+        <p class="text-lg text-center max-w-2xl mx-auto">
+            Ми створюємо прості та красиві вебсайти з використанням сучасних технологій.
+        </p>
+    </section>
+
+    <section id="contact" class="bg-gray-200 py-20">
+        <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center mb-6">Контакти</h2>
+            <form class="max-w-lg mx-auto bg-white p-6 rounded-lg shadow-md">
+                <label class="block mb-4">
+                    <span class="text-gray-700">Ім'я</span>
+                    <input type="text" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Ваше ім'я">
+                </label>
+                <label class="block mb-4">
+                    <span class="text-gray-700">Email</span>
+                    <input type="email" class="mt-1 block w-full p-2 border border-gray-300 rounded-md" placeholder="Ваш email">
+                </label>
+                <label class="block mb-4">
+                    <span class="text-gray-700">Повідомлення</span>
+                    <textarea class="mt-1 block w-full p-2 border border-gray-300 rounded-md" rows="4" placeholder="Ваше повідомлення"></textarea>
+                </label>
+                <button type="submit" class="w-full bg-blue-500 text-white px-4 py-2 rounded-md hover:bg-blue-600">
+                    Відправити
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="text-center py-6 bg-gray-800 text-white">
+        <p>&copy; 2025 Мій Сайт. Усі права захищені.</p>
+    </footer>
+
+</body>
+</html>
