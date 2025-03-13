@@ -1,0 +1,35 @@
+.dark-bg{
+    background-color: #2D3651;
+}
+
+.test-lept{
+    position: relative;
+    padding: 113px 0 30px 0;
+}
+
+.test-lept::after{
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 75px;
+    background-color: white;
+    top: 50%;
+    left: 48%;
+    transform: translate(0,0);
+}
+
+.footer-title{
+    font-weight: 100;
+    font-size: 16px;
+    line-height: 20px;
+    text-align: center;
+    color: #637588;
+}
+
+.footer-decs{
+        font-weight: 100;
+        font-size: 16px;
+        line-height: 20px;
+        text-align: center;
+        color: white;
+} 
