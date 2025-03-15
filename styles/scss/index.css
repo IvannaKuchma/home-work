@@ -624,7 +624,7 @@ h3 {
 }
 @media (min-width: 577px) and (max-width: 768px) {
   .wrapper {
-    max-width: 768px;
+    max-width: 577px;
   }
   #menuToggle {
     display: block;
@@ -739,7 +739,7 @@ h3 {
     grid-row: 6;
   }
   .section {
-    height: 804px;
+    height: 100%;
   }
   .block-title {
     width: 284px;
@@ -751,8 +751,14 @@ h3 {
   .block-desc {
     font-size: 15px;
     margin: 0 0 0 20px;
+    height: 100%;
+    width: auto;
+  }
+  .inline {
+    padding: 10px 20px;
   }
   .inline::after {
+    top: 25%;
     transform: translate(-50%, -85%);
   }
   .form-container {
@@ -822,13 +828,13 @@ h3 {
 }
 @media (min-width: 375px) and (max-width: 576px) {
   .wrapper {
-    max-width: 375px;
+    max-width: 576px;
   }
   .wrapper-wrapper {
     padding-top: 0;
   }
   .logo {
-    padding: 30px;
+    padding: 30px 0;
     margin: 0;
   }
   .header__nav {
@@ -894,9 +900,6 @@ h3 {
   #menuCheckbox:checked ~ .menu-icon span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
-  .wrappers {
-    padding: 0 135px;
-  }
   .wrappers > h1 {
     font-size: 20px;
   }
@@ -954,66 +957,28 @@ h3 {
     padding-bottom: 20px;
   }
   .section {
-    height: 804px;
+    height: 100%;
   }
-  .block-title {
-    width: 284px;
-    height: 80px;
-    font-size: 32px;
-    margin: 0 0 0 20px;
-    padding-top: 40px;
-  }
-  .block-desc {
-    font-size: 16px;
-    margin: 0 0 0 20px;
-  }
-  .inline::after {
-    transform: translate(-50%, -85%);
-  }
-  .form-container {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(2, 1fr);
-    gap: 20px;
-    padding: 30px 20px;
-  }
-  .form-name {
-    grid-column: 1/3;
-    grid-row: 1;
-  }
-  .form-email {
-    grid-column: 1;
-    grid-row: 2;
-  }
-  .button-submit {
-    grid-column: 2;
-    grid-row: 2;
-  }
-  .section {
-    height: 1082px;
+  .wrapper {
+    margin: 0;
   }
   .container-block {
     display: block;
     width: 100%;
-    height: auto;
+    height: 100%;
   }
   .block-title {
-    width: 350px;
     font-size: 24px;
     line-height: 25px;
     text-align: center;
-    padding: 35px 0 0 150px;
   }
   .block-desc {
     width: 100%;
-    height: 450px;
+    height: 100%;
     padding-top: 0;
   }
   .inline {
     display: none;
-  }
-  .block__img-lamp {
-    padding: 50px 0 0 110px;
   }
   .form-container {
     display: grid;
