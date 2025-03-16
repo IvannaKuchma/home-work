@@ -347,18 +347,14 @@
 
 .inline{
     position: relative;
-    padding: 142px 50px 142px 42px;
+
 }
- .inline::after{
+.inline::after{
     content: "";
     position: absolute;
     height: 200px;
-    width: 1px;
     border: 1px solid rgba(112, 112, 112, 1);
-    top: 50%;
-    left: 50%;
-    margin-right: -50%;
-    transform: translate(-50%, -50%);
+    top: 13%;
  }
 
 .bg-dark{
@@ -408,15 +404,11 @@ button:hover{
     margin: 0;
 }
 
-.wrapper-posts{
-    margin: 0;
-}
-
 .post-grid{
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    grid-template-rows: repeat(2, 550px);
-    gap: 20px;
+    grid-template-columns: repeat(4, calc((100% - 30px - 40px) / 4));
+    grid-template-rows: repeat(2, calc((100% - 30px - 40px) / 2));
+    gap: 30px 20px;
     padding: 54px 0 20px;
 }
 
@@ -452,8 +444,11 @@ div:nth-child(6){
     display: flex;
     flex-direction: column;
     text-align: center;
-    padding: 0 36px;
     background: #EEEEEE;
+}
+
+.post-images{
+    width: 100%;
 }
 
 h3{
@@ -579,17 +574,13 @@ h3{
         margin: 0 0 0 20px;
     }
     
-     .inline::after{
-        transform: translate(-50%, -100%);
-     }
-    
     .title{
         font-size: 32px;
         padding-top: 50px;
     }
     .post-grid{
-        grid-template-columns: repeat(3, 1fr);
-        grid-template-rows: repeat(3, 550px);
+        grid-template-columns: repeat(3, calc((100% - 30px - 40px) / 3));
+        grid-template-rows: repeat(3, calc((100% - 30px - 40px) / 3));
         gap: 20px;
         padding: 54px 0 20px;
     
@@ -625,6 +616,11 @@ h3{
         grid-row: 3;
     }
 
+    .post-content {
+       justify-content: flex-start;
+       padding: 0 15px;
+    }
+
     .post-image{
         height: 55%;
     }
@@ -646,7 +642,7 @@ h3{
 
 @media (min-width: 577px) and (max-width: 768px){
     .wrapper{
-        max-width: 577px;
+        max-width: 100%;
     }
 
     #menuToggle {
@@ -807,20 +803,15 @@ h3{
        width: auto;
    }
 
-   .inline{
-    padding: 10px 20px;
-   }
-   
-    .inline::after{
-        top: 25%;
-       transform: translate(-50%, -85%);
+   .block__img-lamp{
+    width: 200px;
+    height: 350px;
    }
 
    .form-container{
        display: grid;
        grid-template-columns: repeat(2, 1fr);
        grid-template-rows: repeat(2, 1fr);
-       gap: 20px;
        padding: 30px 20px;
     }
 
@@ -845,9 +836,9 @@ h3{
     }
 
    .post-grid{
-       grid-template-columns: repeat(3, 1fr);
-       grid-template-rows: repeat(2, 1fr);
-       gap: 20px;
+       grid-template-columns: repeat(2, calc((100% - 30px - 40px) / 2));
+       grid-template-rows: repeat(3, calc((95% - 30px - 40px) / 3));
+       gap: 60px 20px;
        padding: 0 0 20px;
    
    }
@@ -878,14 +869,13 @@ h3{
    }
 
    div:nth-child(6){
-    grid-column: 2;
-    grid-row: 3;
-}
+        grid-column: 2;
+        grid-row: 3;
+    }
 
-.posts{
-    width: 352px;
-    height: 550px;
-}
+    .post-content {
+    padding: 0;
+    }
 
 .post-image{
     height: 55%;
@@ -1086,6 +1076,11 @@ h3{
     
     .inline{
         display: none;
+    }
+    
+    .block__img-lamp{
+        display: block;
+        margin: 0 auto;
     }
 
     .form-container{
