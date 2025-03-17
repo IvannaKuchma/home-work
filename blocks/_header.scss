@@ -1,0 +1,35 @@
+.header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    .logo {
+        padding-top: $padding-top-logo;
+
+        img {
+            width: $logo-width;
+        }
+    }
+}
+
+.wrapper__wrapper {
+    @include flex-container();
+    padding-top: $padding-top-nav;
+}
+
+.header__nav-list {
+    list-style: none;
+    @include flex-container();
+    padding-right: $padding-right-nav;
+}
+
+.header-item {
+    margin-right: $margin-right-item;
+    @include link-style();
+}
+
+.header__link {
+    background: $background-color;
+    @include link-style();
+}

@@ -1,7 +1,230 @@
-$mixinFonts:(
-    font-size: 16px,
-    font-weight:400,
-    line-height:48px,
-  
+@mixin flex-container($justify: space-between, $align: center, $wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
 
-)
+@mixin link-style($color: $primary-color, $hover-color: $secondary-color) {
+    text-decoration: none;
+    color: $color;
+    font-size: $font-size-base;
+    line-height: $line-height-base;
+    
+    &:hover {
+        color: $hover-color;
+    }
+}
+
+// Centered absolute position
+@mixin absolute-center($top: 50%, $left: 48%) {
+    position: absolute;
+    top: $top;
+    left: $left;
+    transform: translate(0, 0);
+}
+
+// Text styles
+@mixin text-style($color, $font-size: $font-size-small, $line-height: $line-height-small, $align: center, $weight: 100) {
+    font-weight: $weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: $align;
+    color: $color;
+    margin: 0;
+}
+
+// Flex container
+@mixin flex-container($justify: center, $align: center, $wrap: wrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Text styles
+@mixin text-style($color, $font-size, $line-height: 100%, $align: center, $weight: 300) {
+    font-weight: $weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    text-align: $align;
+    color: $color;
+}
+
+// Button styles
+@mixin button-style($border-color: $primary-color, $text-color: $primary-color, $bg-color: transparent, $hover-bg: $secondary-color) {
+    border: 2px solid $border-color;
+    color: $text-color;
+    background-color: $bg-color;
+    width: $btn-width;
+    height: $btn-height;
+    padding: $btn-padding;
+    font-weight: 400;
+    font-size: $font-size-base;
+    
+    &:hover, &:active {
+        background: $hover-bg;
+    }
+}
+
+// Grid container
+@mixin grid-container($columns: $grid-columns, $rows: $grid-rows, $gap: $grid-gap, $padding: $grid-padding) {
+    display: grid;
+    grid-template-columns: repeat($columns, 1fr);
+    grid-template-rows: repeat($rows, $grid-row-height);
+    gap: $gap;
+    padding: $padding;
+}
+
+// Background image with overlay
+@mixin background-image($image) {
+    background: url($image);
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        right: 0;
+        background-color: $overlay-color;
+    }
+
+    &:hover, &:active {
+        color: $secondary-color;
+
+        &::after {
+            background: $overlay-hover;
+        }
+    }
+}
+
+// Centered text
+@mixin centered-text($color: $primary-color, $font-size: 20px, $line-height: 23.44px, $weight: 700, $spacing: 10%) {
+    font-weight: $weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    letter-spacing: $spacing;
+    color: $color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    transition: 0.3s ease-in;
+}
+
+// Button styles
+@mixin button-style($width: $btn-width-large, $height: $btn-height, $border: 2px solid $btn-border-color, $bg-color: $overlay-hover, $hover-bg: $secondary-color) {
+    width: $width;
+    height: $height;
+    text-transform: uppercase;
+    font-weight: 400;
+    font-size: 18px;
+    color: $primary-color;
+    background: $bg-color;
+    border: $border;
+
+    &:hover, &:active {
+        background: $hover-bg;
+    }
+}
+
+// Flex container
+@mixin flex-container($justify: space-between, $align: center, $wrap: nowrap) {
+    display: flex;
+    flex-wrap: $wrap;
+    justify-content: $justify;
+    align-items: $align;
+}
+
+// Text styles
+@mixin text-style($color, $font-size, $line-height, $weight: 400) {
+    font-weight: $weight;
+    font-size: $font-size;
+    line-height: $line-height;
+    color: $color;
+}
+
+// Block styles
+@mixin block-style($width, $height, $padding-top: 0) {
+    width: $width;
+    height: $height;
+    padding-top: $padding-top;
+}
+
+// Border line
+@mixin border-line($height: $border-height, $color: $border-color, $top: 13%) {
+    content: "";
+    position: absolute;
+    height: $height;
+    border: 1px solid $color;
+    top: $top;
+}
+
+// Grid container for form
+@mixin grid-container($columns: 3, $gap: $form-gap, $padding: $form-padding) {
+    display: grid;
+    grid-template-columns: repeat($columns, calc((100% - 30px - 40px) / 3));
+    gap: $gap;
+    padding: $padding;
+}
+
+// Input and button styles
+@mixin input-style($height: 60px, $font-size: $font-size-input, $line-height: $line-height-input) {
+    border: none;
+    border-bottom: $border-width solid $border-color;
+    height: $height;
+    font-weight: 400;
+    font-size: $font-size;
+    line-height: $line-height;
+    background: $gradient-bg;
+    color: $primary-color;
+    transition: 0.3s ease;
+}
+
+// Placeholder style
+@mixin placeholder-style($color: $primary-color, $font-size: $font-size-placeholder, $padding: 20px) {
+    color: $color;
+    font-size: $font-size;
+    padding: $padding;
+}
+
+// Hover and active effects
+@mixin hover-active-style {
+    background: $background-light;
+    border: $border-width solid $border-color;
+}
+
+// Button hover effect
+@mixin button-hover-style {
+    background: $secondary-color;
+}
+
+// Grid layout
+@mixin grid-layout($columns: 4, $rows: 2, $gap-row: $grid-gap-row, $gap-column: $grid-gap-column) {
+    display: grid;
+    grid-template-columns: repeat($columns, calc((100% - 30px - 40px) / $columns));
+    grid-template-rows: repeat($rows, calc((100% - 30px - 40px) / $rows));
+    gap: $gap-row $gap-column;
+}
+
+// Text styles
+@mixin text-style($font-size, $color, $weight: 400, $align: center, $padding-top: 0) {
+    font-weight: $weight;
+    font-size: $font-size;
+    color: $color;
+    text-align: $align;
+    padding-top: $padding-top;
+}
+
+// Post container
+@mixin post-container($height: $post-height, $bg-color: $background-light) {
+    width: 100%;
+    height: $height;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    background: $bg-color;
+}

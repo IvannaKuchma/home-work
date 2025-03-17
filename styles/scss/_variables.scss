@@ -1,10 +1,88 @@
-$colors:(
-    color-white: #fff,
-    color-piper: #D66926,
-    color-pickled: #2D3651,
-    color-metallic-blue: rgba(45, 54, 81, 0.5),
-    color-black: #000,
-    color-slate-grey:#637588,
+// Background
+$background-color: transparent;
 
-)
+// Colors
+$title-color: rgba(45, 54, 81, 1);
+$text-color: #637588;
+$background-light: #EEEEEE;
+$background-dark: rgba(45, 54, 81, 1);
+$secondary-color: #D66926;
+$border-color: white;
+$background-dark: #2D3651;
+$background-light-hover: rgba(255, 255, 255, 0.2);
+$gradient-bg: linear-gradient(180deg, $background-dark 0%, rgba(45, 54, 81, 0) 100%);
+$overlay-color: rgba(45, 54, 81, 0.5);
+$overlay-hover: rgba(45, 54, 81, 0.8);
+$background-light: rgba(229, 229, 229, 1);
+$text-secondary: rgba(99, 117, 136, 1);
+$border-color: rgba(112, 112, 112, 1);
 
+// Font sizes
+$title-font-size: 40px;
+$title-line-height: 48px;
+$post-title-font-size: 18px;
+$desc-font-size: 16px;
+$font-size-input: 18px;
+$font-size-placeholder: 16px;
+$line-height-input: 39px;
+$line-height-base: 20px;
+$font-size-h1: 60px;
+$desc-line-height: 24px;
+
+// Spacing & Layout
+$title-padding-top: 100px;
+$grid-gap-row: 30px;
+$grid-gap-column: 20px;
+$post-height: 255px;
+$form-gap: 20px;
+$form-padding: 30px 20px;
+$padding-top-logo: 48px;
+$padding-top-nav: 38px;
+$padding-right-nav: 41px;
+$margin-right-item: 20px;
+$padding-bottom-test: 67px;
+$padding-top-intro: 339px;
+$padding-bottom-intro: 447px;
+$btn-width: 250px;
+$btn-height: 60px;
+$btn-padding: 10px 70px 21px 71px;
+
+// Borders
+$border-width: 2px;
+$line-width: 75px;
+$border-color: $primary-color;
+
+// Logo size
+$logo-width: 100px;
+
+// Backgrounds
+$background-image: url(../../images/header-block.png);
+
+// Grid settings
+$grid-gap: 8px;
+$grid-padding: 10px;
+$grid-columns: 4;
+$grid-rows: 3;
+$grid-row-height: 350px;
+
+// Button styles
+$btn-width-large: 350px;
+$btn-height: 60px;
+$btn-border-color: $background-dark;
+
+// Block dimensions
+$title-width: 354px;
+$title-height: 96px;
+$desc-width: 936px;
+$desc-height: 320px;
+$border-height: 200px;
+
+// Form layout
+$form-gap: 20px;
+$form-padding: 30px 20px;
+
+// Layout settings
+$title-padding-top: 100px;
+$grid-gap-row: 30px;
+$grid-gap-column: 20px;
+$post-height: 255px;

@@ -1,0 +1,19 @@
+.form-container {
+    @include grid-container();
+}
+
+input, button {
+    @include input-style();
+}
+
+input::placeholder {
+    @include placeholder-style();
+}
+
+input:hover, input:active, button:active {
+    @include hover-active-style();
+}
+
+button:hover {
+    @include button-hover-style();
+}

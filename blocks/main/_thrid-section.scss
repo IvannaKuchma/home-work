@@ -1,0 +1,31 @@
+.section {
+    background: $background-light;
+}
+
+.container-block {
+    @include flex-container();
+    width: 100%;
+    height: auto;
+}
+
+.block-title {
+    @include block-style($title-width, $title-height, 60px);
+    @include text-style($text-dark, $title-font-size, $title-line-height, 700);
+}
+
+.block-desc {
+    @include block-style($desc-width, $desc-height, 50px);
+    @include text-style($text-secondary, $desc-font-size, $desc-line-height);
+}
+
+.inline {
+    position: relative;
+
+    &::after {
+        @include border-line();
+    }
+}
+
+.bg-dark {
+    background: $background-dark;
+}

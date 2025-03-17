@@ -1,0 +1,64 @@
+.grid-container {
+    @include grid-container();
+}
+
+.grid__title {
+    @include centered-text();
+}
+
+.grid__desc {
+    position: relative;
+    z-index: 2;
+}
+
+.grid__title:nth-child(1) {
+    grid-column: 1 / 3;
+    @include background-image('../../images/img-html.png');
+}
+
+.grid__title:nth-child(2) {
+    @include background-image('../../images/img-css.png');
+}
+
+.grid__title:nth-child(3) {
+    @include background-image('../../images/img-markup.png');
+}
+
+.grid__title:nth-child(4) {
+    @include background-image('../../images/img-webdesign.png');
+}
+
+.grid__title:nth-child(5) {
+    grid-column: 2 / 4;
+    grid-row: 2;
+    @include background-image('./../images/img-qa.png');
+}
+
+.grid__title:nth-child(6) {
+    grid-row: 2 / 4;
+    grid-column: 4;
+    @include background-image('../../images/img-codding.png');
+}
+
+.grid__title:nth-child(7) {
+    @include background-image('../../images/img-php.png');
+}
+
+.grid__title:nth-child(8) {
+    grid-row: 3 / 4;
+    @include background-image('../../images/img-adaptability.png');
+}
+
+.grid__title:nth-child(9) {
+    @include background-image ('../../images/img-seo.png');
+}
+
+.button__grid {
+    display: flex;
+    justify-content: center;
+    padding-bottom: 40px;
+}
+
+.button {
+    @include button-style();
+}

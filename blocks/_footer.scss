@@ -1,0 +1,24 @@
+.line {
+    position: relative;
+    padding: $padding-line;
+
+    &::after {
+        content: "";
+        @include absolute-center();
+        height: $line-height;
+        width: $line-width;
+        background-color: $white-color;
+    }
+}
+
+.test {
+    padding-bottom: $padding-bottom-test;
+}
+
+.footer__title {
+    @include text-style($text-color);
+}
+
+.footer__desc {
+    @include text-style($white-color);
+}
