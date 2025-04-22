@@ -30,7 +30,7 @@ class Slider {
           <button id="next">&#10095;</button>
         </div>
         ${this.showIndicators ? `<div class="indicators" id="indicators"></div>` : ''}
-        <button class="pause-btn" id="pauseBtn">Пауза</button>
+        <button class="pause-btn" id="pauseBtn>stop</button>
       `;
   
       if (this.showIndicators) this.updateIndicators();
@@ -83,7 +83,7 @@ class Slider {
       this.slider.querySelector('#prev').addEventListener('click', () => this.prevSlide());
       this.slider.querySelector('#pauseBtn').addEventListener('click', () => {
         this.isPaused = !this.isPaused;
-        this.slider.querySelector('#pauseBtn').textContent = this.isPaused ? 'Відновити' : 'Пауза';
+        this.slider.querySelector('#pauseBtn').textContent = this.isPaused ? 'Start' : 'stop';
       });
   
       let startX = 0;
@@ -110,7 +110,7 @@ class Slider {
   
   new Slider({
     images: [
-      './images/foto1.webp',
+      './i',
       './images/foto2.jpg',
       './images/foto3.jpg.avif',
       './images/foto4.jpg',
