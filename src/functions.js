@@ -39,5 +39,3 @@ function weekFn(cond) {
 
   return str;
 }
-
-module.exports = { ageClassification, weekFn };

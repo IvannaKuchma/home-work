@@ -1,4 +1,4 @@
-const { ageClassification, weekFn } = require ('../src/functions');
+const { ageClassification, weekFn } = require('./src/functions.js');
 
 describe('ageClassification', () => {
   test('повертає null для від’ємних значень та нуля', () => {
