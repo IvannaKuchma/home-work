@@ -1,13 +1,11 @@
 {
-  "name": "age-week-project",
+  "name": "home-work-29",
   "version": "1.0.0",
-  "description": "Проєкт для тестування функцій ageClassification та weekFn за допомогою Jest",
-  "main": "index.js",
+  "type": "commonjs",
   "scripts": {
     "test": "jest"
   },
   "devDependencies": {
     "jest": "^29.7.0"
-  },
-  "license": "ISC"
+  }
 }
