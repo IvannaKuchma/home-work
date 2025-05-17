@@ -59,13 +59,29 @@ input[type="text"] {
   border: 1.8px solid #cbd5e1;
   border-radius: 10px;
   box-sizing: border-box;
-  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+  text-align: center; 
+  color: #334155;
+  background-color: #f9fafb;
+}
+
+input[type="text"]::placeholder {
+  color: #94a3b8;
+  text-align: center;
+  font-style: italic;
+  opacity: 0.8;
+  transition: opacity 0.3s ease;
 }
 
 input[type="text"]:focus {
   border-color: #3b82f6;
-  box-shadow: 0 0 8px rgba(59, 130, 246, 0.3);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
   outline: none;
+  background-color: #ffffff;
+}
+
+input[type="text"]:focus::placeholder {
+  opacity: 0.5;
 }
 
 button {
@@ -197,4 +213,3 @@ button[type="reset"]:hover {
     font-size: 0.85rem;
   }
 }
-
