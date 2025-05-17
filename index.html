@@ -2,16 +2,33 @@
 <html lang="uk">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Home-work-32</title>">
-  <link rel="stylesheet" href="./style.css">
+  <title>Home-work-32</title>
+  <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <div class="container">
-    <h1>Пошук фільмів</h1>
-    <input type="text" id="searchInput" placeholder="Введіть назву фільму..." />
-    <div id="results" class="results"></div>
-  </div>
-  <script src="index.js"></script>
+
+  <form id="searchForm">
+    <label>
+      Title:
+      <input type="text" name="title" />
+    </label>
+    <label>
+      Year:
+      <input type="text" name="year" />
+    </label>
+    <label>
+      Plot:
+      <input type="text" name="plot" />
+    </label>
+    <label>
+      Response:
+      <input type="text" name="response" />
+    </label>
+    <button type="submit">Search</button>
+    <button type="reset">Reset</button>
+  </form>
+
+  <script src="script.js"></script>
+
 </body>
 </html>

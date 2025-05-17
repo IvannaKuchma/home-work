@@ -64,5 +64,25 @@ const handleInput = debounce(async () => {
   displayMovies(movies);
 }, 500); 
 
+const form = document.getElementById('searchForm');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault();
+
+  const title = form.title.value.trim();
+  const year = form.year.value.trim();
+  const plot = form.plot.value.trim();
+  const response = form.response.value.trim();
+
+  console.log({ title, year, plot, response });
+
+  alert(`Пошук: \nTitle: ${title}\nYear: ${year}\nPlot: ${plot}\nResponse: ${response}`);
+});
+
+form.addEventListener('reset', function() {
+  console.log('Форма очищена');
+});
+
+
 searchInput.addEventListener('input', handleInput);
 
