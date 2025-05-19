@@ -1,0 +1,15 @@
+$primary: #3498db;
+
+body {
+  font-family: Arial, sans-serif;
+  background: $primary;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+
+  h1 {
+    color: white;
+    transition: all 0.3s ease;
+  }
+}
