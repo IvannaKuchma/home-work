@@ -1,0 +1,14 @@
+html {
+  font-size: 30px;
+}
+ul {
+  line-height: 1.5;
+  max-width: 900px;
+  font-size: 0.9em;
+}
+li {
+  padding: 0 10px;
+}
+.active {
+  text-decoration: underline;
+}
