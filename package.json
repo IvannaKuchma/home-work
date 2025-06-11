@@ -1,31 +1,10 @@
 {
-  "name": "home-work",
+  "name": "vanilla-react-project",
   "version": "1.0.0",
-  "description": "React component with async fetch using axios and sass",
-  "main": "index.js",
+  "description": "React via CDN - no Webpack or Babel",
   "scripts": {
-    "start": "webpack serve --mode development --open",
-    "build": "webpack --mode production"
+    "start": "echo 'Open index.html in your browser'"
   },
-  "dependencies": {
-    "axios": "^1.9.0",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.27.4",
-    "@babel/preset-env": "^7.27.2",
-    "@babel/preset-react": "^7.27.1",
-    "babel-loader": "^9.2.1",
-    "css-loader": "^6.8.1",
-    "sass": "^1.89.2",
-    "sass-loader": "^13.3.3",
-    "style-loader": "^3.3.4",
-    "webpack": "^5.88.2",
-    "webpack-cli": "^5.1.4",
-    "webpack-dev-server": "^4.15.1"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC"
+  "dependencies": {},
+  "devDependencies": {}
 }

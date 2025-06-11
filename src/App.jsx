@@ -1,17 +1,19 @@
 import React, { useState } from 'react';
-import UserData from './components/UserData';
+import { UserData } from './hooks/UserData';
+import './styles/style.sass';
 
-const App = () => {
+export const App = () => {
   const [userId, setUserId] = useState(1);
 
+  const handleNextUser = () => {
+    setUserId((prev) => prev + 1);
+  };
+
   return (
-    <div className="container">
-      <button onClick={() => setUserId(prev => (prev === 10 ? 1 : prev + 1))}>
-        Завантажити користувача {userId + 1}
-      </button>
+    <div className="app">
+      <h1>Дані користувача</h1>
       <UserData userId={userId} />
+      <button onClick={handleNextUser}>Наступний користувач</button>
     </div>
   );
 };
-
-export default App;
