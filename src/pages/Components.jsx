@@ -1,37 +1,19 @@
-import { useEffect, useState } from "react";
-import Loader from "../components/Loader";
+import useFetch from "../hooks/useFetch";
 
-const Components = () => {
-    const [components, setComponents] = useState([]);
-    const [loading, setLoading] = useState(true);
+export default function Comments() {
+  const { data: comments, loading } = useFetch("https://jsonplaceholder.typicode.com/comments");
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/posts")
-            .then((response) => response.json())
-            .then((data) => {
-                setComponents(data);
-                setLoading(false);
-            });
-    }, []);
+  if (loading) return <p>Loading...</p>;
 
-    if (loading) {
-        return <Loader />;
-    }
-
-    return (
-        <div className='grid grid-cols-1 md:grid-cols-2 gap-4'>
-            {components.map((comment) => (
-                <div
-                    key={comment.id}
-                    className="p-4 border rounded"
-                >
-                    <h3 className="font-semibold">{comment.name}</h3>
-                    <p className="text-sm text-grey-600"> {comment.email}</p>
-                    <p>{comment.body}</p>
-                </div>
-            ))}
+  return (
+    <div className="grid gap-4">
+      {comments.map(c => (
+        <div key={c.id} className="border p-4">
+          <h3 className="font-semibold">{c.name}</h3>
+          <p className="text-sm text-gray-600">{c.email}</p>
+          <p>{c.body}</p>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
-
-export default Components;

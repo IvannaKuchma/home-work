@@ -1,36 +1,19 @@
-import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 
-const Todos = () => {
-    const [todos, setTodos] = useState([]);
-    const [loading, setLoading] = useState(true);
+export default function Todos() {
+  const { data: todos, loading } = useFetch("https://jsonplaceholder.typicode.com/todos?_limit=20");
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/todos")
-            .then((response) => response.json())
-            .then((data) => {
-                setTodos(data);
-                setLoading(false);
-            });
-    }, []);
+  if (loading) return <Loader />;
 
-    if (loading) {
-        return <Loader />;
-    }
-
-    return (
-        <div className='grid gap-4'>
-            {todos.map((todo) => (
-                <div key={todo.id}
-                    className="p-4 border rounded flex justify-between items-center">
-                    <span>{todo.title}</span>
-                   <span className={todo.completed ? 'text-green-600' : 'text-red-600'}>
-                     {todo.completed ? '✔' : '✘'}
-                    </span>
-                </div>
-            ))}
+  return (
+    <div className="grid gap-2">
+      {todos.map(todo => (
+        <div key={todo.id} className="border p-2 flex items-center gap-2">
+          <input type="checkbox" checked={todo.completed} readOnly />
+          <span>{todo.title}</span>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
-
-export default Todos;

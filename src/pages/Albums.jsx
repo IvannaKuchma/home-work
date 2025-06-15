@@ -1,36 +1,18 @@
-import { useEffect, useState } from "react";
+import useFetch from "../hooks/useFetch";
 import Loader from "../components/Loader";
 
-const Albums = () => {
-    const [albums, setAlbums] = useState([]);
-    const [loading, setLoading] = useState(true);
+export default function Albums() {
+  const { data: albums, loading } = useFetch("https://jsonplaceholder.typicode.com/albums");
 
-    useEffect(() => {
-        fetch("https://jsonplaceholder.typicode.com/albums")
-            .then((response) => response.json())
-            .then((data) => {
-                setAlbums(data);
-                setLoading(false);
-            });
-    }, []);
+  if (loading) return <Loader />;
 
-    if (loading) {
-        return <Loader />;
-    }
-
-    return (
-        <div className='grid gap-4'>
-            {albums.map((album) => (
-                <div
-                    key={album.id}
-                    className="p-4 border rounded"
-                >
-                    <h3 className="font-semibold">{album.title}</h3>
-                    <p className="text-sm text-gray-500">Album ID: {album.id}</p>
-                </div>
-            ))}
+  return (
+    <div className="grid gap-4">
+      {albums.map(album => (
+        <div key={album.id} className="border p-4">
+          <h2 className="font-bold">{album.title}</h2>
         </div>
-    );
+      ))}
+    </div>
+  );
 }
-
-export default Albums;
