@@ -1,0 +1,19 @@
+body.light {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+body.dark {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+button, select {
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+}
+
+header, main, footer {
+  padding: 1rem;
+  border-bottom: 1px solid gray;
+}
