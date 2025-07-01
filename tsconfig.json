@@ -1,17 +1,17 @@
 {
   "compilerOptions": {
-    "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node",
-    "baseUrl": "src",
-    "paths": {
-      "@/*": ["*"]
-    },
+    "target": "ESNext",
+    "module": "ESNext",
+    "moduleResolution": "Node",
     "jsx": "react-jsx",
     "strict": true,
     "esModuleInterop": true,
     "forceConsistentCasingInFileNames": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["*"]
+    }
   },
-  "include": ["src", "utils", "app", "pages"]
+  "include": ["src", "pages", "app", "app"]
 }
