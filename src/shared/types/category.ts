@@ -1,8 +1,8 @@
 export interface Category {
   id: string;
-  default: boolean;
-  name: string;
+  title: string;
   description: string;
-  balanceIncome: number;
-  balanceExpend: number;
+  income: number;
+  expense: number; 
+  isDefault: boolean;
 }

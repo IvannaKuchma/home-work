@@ -1,17 +1,28 @@
 import React from 'react';
+import { useAppSelector } from '../store/hooks';
+import UserProfile from '../components/UserProfile';
+import CategoriesList from '../components/CategoriesList';
+import HistoryList from '../components/HistoryList';
+import '../styles/MainPage.css';
+
 
 const MainPage: React.FC = () => {
+  const { data: user, loading: userLoading, error: userError } = useAppSelector(state => state.user);
+  const { data: categories, loading: categoriesLoading, error: categoriesError } = useAppSelector(state => state.categories);
+  const { data: histories, loading: historyLoading, error: historyError } = useAppSelector(state => state.histories);
+
   return (
-    <div style={{ display: 'flex', minHeight: '100vh' }}>
-      <aside style={{ width: '250px', background: '#f5f5f5', padding: '1rem' }}>
-        <h3>Sidebar</h3>
-        {}
-      </aside>
-      <main style={{ flex: 1, padding: '1rem' }}>
-        <h1>Головна сторінка</h1>
-        {}
-      </main>
-    </div>
+  <div className="main-container">
+  <div className="section user">
+    <UserProfile user={user} loading={userLoading} error={userError} />
+  </div>
+  <div className="section categories">
+    <CategoriesList data={categories} loading={categoriesLoading} error={categoriesError}/>
+  </div>
+  <div className="section history">
+    <HistoryList histories={histories || []} loading={historyLoading} error={historyError} />
+  </div>
+</div>
   );
 };
 

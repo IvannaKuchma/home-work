@@ -1,4 +1,4 @@
-import { User } from '@/shared/types/user';
+import { User } from '../types/user';
 
 export const initialUserState: User = {
   id: '',

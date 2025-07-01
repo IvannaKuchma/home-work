@@ -1,9 +1,8 @@
-import { TransactionType } from './enums';
-
 export interface HistoryItem {
   id: string;
-  type: TransactionType;
-  categoryId: string;
-  amount: number;
+  title: string;
   date: string;
+  amount: number;
+  type: 'income' | 'expense';
+  categoryTitle: string;
 }

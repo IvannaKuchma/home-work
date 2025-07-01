@@ -10,7 +10,8 @@
     "skipLibCheck": true,
     "baseUrl": "./src",
     "paths": {
-      "@/*": ["*"]
+      "@/*": ["*"],
+      "utils/*": ["utils/*"]
     }
   },
   "include": ["src", "pages", "src/app", "src/app"]

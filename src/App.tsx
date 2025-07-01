@@ -4,7 +4,6 @@ import { store } from '@/store/store';
 import { fetchUserById } from '@/store/slices/userSlice';
 import { fetchCategories } from '@/store/slices/categorySlice';
 import { fetchHistory } from '@/store/slices/historySlice';
-
 import MainPage from '@/pages/MainPage';
 
 const App: React.FC = () => {
