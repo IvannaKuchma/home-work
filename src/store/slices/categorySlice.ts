@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../../utils/axiosInstance';
+import axios from '../../utils/axiosInstance';
 import { Category } from '../../shared/types/category';
 
 export const fetchCategories = createAsyncThunk('categories/fetchAll', async () => {

@@ -1,5 +1,5 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../../utils/axiosInstance';
+import axios from '../../utils/axiosInstance';
 import { HistoryItem } from '../../shared/types/history';
 
 export const fetchHistory = createAsyncThunk('histories/fetchAll', async () => {
