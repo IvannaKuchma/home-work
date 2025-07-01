@@ -1,0 +1,23 @@
+{
+  "users": [
+    {
+      "id": "1",
+      "name": "User",
+      "password": "",
+      "photo": "https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg?semt=ais_hybrid&w=740",
+      "email": "",
+      "startBalance": 0
+    }
+  ],
+  "categories": [
+    {
+      "id": "1",
+      "default": false,
+      "name": "Clothes",
+      "description": "",
+      "balanceIncome": 0,
+      "balanceExpend": 0
+    }
+  ],
+  "histories": []
+}

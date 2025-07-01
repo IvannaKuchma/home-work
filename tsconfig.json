@@ -13,5 +13,5 @@
       "@/*": ["*"]
     }
   },
-  "include": ["src", "pages", "app", "app"]
+  "include": ["src", "pages", "src/app", "src/app"]
 }
