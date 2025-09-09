@@ -4,11 +4,7 @@ import categoryReducer from './slices/categorySlice';
 import historyReducer from './slices/historySlice';
 
 const store = configureStore({
-  reducer: {
-    user: userReducer,
-    category: categoryReducer,
-    history: historyReducer,
-  },
+  reducer: { user: userReducer, category: categoryReducer, history: historyReducer },
 });
 
 export type RootState = ReturnType<typeof store.getState>;

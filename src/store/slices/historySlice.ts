@@ -10,12 +10,9 @@ export const fetchHistory = createAsyncThunk<History[]>(
   }
 );
 
+interface HistoryState { data: History[]; loading: boolean; error: string | null; }
 
-const initialState = {
-  data: [] as History[],
-  loading: false,
-  error: null as string | null,
-};
+const initialState: HistoryState = { data: [], loading: false, error: null };
 
 const historySlice = createSlice({
   name: 'history',
@@ -23,18 +20,9 @@ const historySlice = createSlice({
   reducers: {},
   extraReducers: (builder) => {
     builder
-      .addCase(fetchHistory.pending, (state) => {
-        state.loading = true;
-        state.error = null;
-      })
-      .addCase(fetchHistory.fulfilled, (state, action) => {
-        state.loading = false;
-        state.data = action.payload;
-      })
-      .addCase(fetchHistory.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || 'Error';
-      });
+      .addCase(fetchHistory.pending, (state) => { state.loading = true; state.error = null; })
+      .addCase(fetchHistory.fulfilled, (state, action) => { state.loading = false; state.data = action.payload; })
+      .addCase(fetchHistory.rejected, (state, action) => { state.loading = false; state.error = action.error.message || 'Error'; });
   },
 });
 

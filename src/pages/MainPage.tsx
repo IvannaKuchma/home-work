@@ -21,11 +21,7 @@ const MainPage: React.FC = () => {
       <aside style={{ width: '250px', padding: '20px', background: '#f0f0f0' }}>
         {user && (
           <div style={{ textAlign: 'center' }}>
-            <img
-              src={user.photo}
-              alt="User"
-              style={{ width: '100px', borderRadius: '50%' }}
-            />
+            <img src={user.photo} alt="User" style={{ width: '100px', borderRadius: '50%' }} />
             <h3>{user.name}</h3>
             <p>Start Balance: ${user.startBalance}</p>
           </div>
@@ -34,24 +30,9 @@ const MainPage: React.FC = () => {
 
       <main style={{ flex: 1, padding: '20px' }}>
         <h2>Categories</h2>
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
-            gap: '1rem',
-          }}
-        >
-          {categories.map((cat: any) => (
-            <div
-              key={cat.id}
-              style={{
-                border: '1px solid #ccc',
-                borderRadius: '10px',
-                padding: '10px',
-                background: '#fff',
-                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
-              }}
-            >
+        <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))', gap: '1rem' }}>
+          {categories.map((cat) => (
+            <div key={cat.id} style={{ border: '1px solid #ccc', borderRadius: '10px', padding: '10px', background: '#fff', boxShadow: '0 2px 5px rgba(0,0,0,0.1)' }}>
               <h4>{cat.name}</h4>
               <p>Income: ${cat.balanceIncome}</p>
               <p>Expense: ${cat.balanceExpend}</p>
@@ -64,4 +45,3 @@ const MainPage: React.FC = () => {
 };
 
 export default MainPage;
-

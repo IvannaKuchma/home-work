@@ -19,11 +19,12 @@ const CategoriesList: React.FC<CategoriesListProps> = ({ data, loading, error, h
       <h2>Categories</h2>
       <ul>
         {data.map(cat => (
-            <li key={cat.id} className="list-item">
-                <strong>{cat.title}</strong> — {cat.description} <br />
-                Income: {cat.income}, Expense: {cat.expense}
-            </li>
-  ))}
+          <li key={cat.id} className="list-item">
+             <strong>{cat.name}</strong> — <br />
+              Income: {cat.balanceIncome}, Expense: {cat.balanceExpend}
+          </li>
+))}
+
 </ul>
 
     </section>
