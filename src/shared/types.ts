@@ -17,7 +17,7 @@ export interface Category {
   title: string;
   description: string;
   income: number;
-  expense: number;  // виправлено назву
+  expense: number;  
   isDefault: boolean;
 }
 

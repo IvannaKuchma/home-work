@@ -1,28 +1,66 @@
-import React from 'react';
-import { useAppSelector } from '../store/hooks';
-import UserProfile from '../components/UserProfile';
-import CategoriesList from '../components/CategoriesList';
-import HistoryList from '../components/HistoryList';
-import '../styles/MainPage.css';
-
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { AppDispatch, RootState } from '../store/store';
+import { fetchUserById } from '../store/slices/userSlice';
+import { fetchCategories } from '../store/slices/categorySlice';
+import { fetchHistory } from '../store/slices/historySlice'; 
 
 const MainPage: React.FC = () => {
-  const { data: user, loading: userLoading, error: userError } = useAppSelector(state => state.user);
-  const { data: categories, loading: categoriesLoading, error: categoriesError } = useAppSelector(state => state.categories);
-  const { data: histories, loading: historyLoading, error: historyError } = useAppSelector(state => state.histories);
+  const dispatch = useDispatch<AppDispatch>();
+
+  const user = useSelector((state: RootState) => state.user.data);
+  const categories = useSelector((state: RootState) => state.category.data);
+
+  useEffect(() => {
+    dispatch(fetchUserById('1'));
+    dispatch(fetchCategories());
+    dispatch(fetchHistory()); 
+  }, [dispatch]);
 
   return (
-  <div className="main-container">
-  <div className="section user">
-    <UserProfile user={user} loading={userLoading} error={userError} />
-  </div>
-  <div className="section categories">
-    <CategoriesList data={categories} loading={categoriesLoading} error={categoriesError}/>
-  </div>
-  <div className="section history">
-    <HistoryList histories={histories || []} loading={historyLoading} error={historyError} />
-  </div>
-</div>
+    <div style={{ display: 'flex', minHeight: '100vh' }}>
+      <aside style={{ width: '250px', padding: '20px', background: '#f0f0f0' }}>
+        {user && (
+          <div style={{ textAlign: 'center' }}>
+            <img
+              src={user.photo}
+              alt="User"
+              style={{ width: '100px', borderRadius: '50%' }}
+            />
+            <h3>{user.name}</h3>
+            <p>Start Balance: ${user.startBalance}</p>
+          </div>
+        )}
+      </aside>
+
+      <main style={{ flex: 1, padding: '20px' }}>
+        <h2>Categories</h2>
+        <div
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(180px, 1fr))',
+            gap: '1rem',
+          }}
+        >
+          {categories.map((cat: any) => (
+            <div
+              key={cat.id}
+              style={{
+                border: '1px solid #ccc',
+                borderRadius: '10px',
+                padding: '10px',
+                background: '#fff',
+                boxShadow: '0 2px 5px rgba(0,0,0,0.1)',
+              }}
+            >
+              <h4>{cat.name}</h4>
+              <p>Income: ${cat.balanceIncome}</p>
+              <p>Expense: ${cat.balanceExpend}</p>
+            </div>
+          ))}
+        </div>
+      </main>
+    </div>
   );
 };
 

@@ -1,8 +1,8 @@
-export interface HistoryItem {
+export interface History {
   id: string;
-  title: string;
-  date: string;
-  amount: number;
   type: 'income' | 'expense';
-  categoryTitle: string;
+  categoryId: string;
+  amount: number;
+  date: string;
+  comment?: string;
 }

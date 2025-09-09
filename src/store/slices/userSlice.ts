@@ -1,23 +1,25 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axiosInstance';
-import { User } from '../../shared/types';
+import axios from 'axios';
+
+export const fetchUserById = createAsyncThunk(
+  'user/fetchUserById',
+  async (id: string) => {
+    const res = await axios.get(`http://localhost:3001/users/${id}`);
+    return res.data;
+  }
+);
 
 interface UserState {
-  data: User | null;
-  loading: boolean;
+  data: any;
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
 const initialState: UserState = {
   data: null,
-  loading: false,
+  status: 'idle',
   error: null,
 };
-
-export const fetchUserById = createAsyncThunk('user/fetchById', async (id: string) => {
-  const res = await axios.get(`/users/${id}`);
-  return res.data as User;
-});
 
 const userSlice = createSlice({
   name: 'user',
@@ -26,16 +28,15 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserById.pending, (state) => {
-        state.loading = true;
-        state.error = null;
+        state.status = 'loading';
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
-        state.loading = false;
+        state.status = 'succeeded';
         state.data = action.payload;
       })
       .addCase(fetchUserById.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message || 'Failed to fetch user';
+        state.status = 'failed';
+        state.error = action.error.message || null;
       });
   },
 });

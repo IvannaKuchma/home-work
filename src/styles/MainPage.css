@@ -1,4 +1,3 @@
-/* Загальне оформлення сторінки */
 .main-container {
   display: flex;
   gap: 20px;
@@ -8,7 +7,6 @@
   box-sizing: border-box;
 }
 
-/* Блок для кожної секції (UserProfile, Categories, History) */
 .section {
   background: #ffffff;
   padding: 20px;
@@ -16,7 +14,6 @@
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
-/* Розміри для секцій */
 .section.user {
   flex: 1;
 }
@@ -26,20 +23,17 @@
   flex: 2;
 }
 
-/* Заголовки секцій */
 .section h2 {
   margin-bottom: 10px;
   color: #333;
 }
 
-/* Списки без стилю */
 .section ul {
   list-style: none;
   padding: 0;
   margin: 0;
 }
 
-/* Елементи списку */
 .list-item {
   margin-bottom: 12px;
   padding: 10px;
@@ -48,7 +42,6 @@
   background-color: #fafafa;
 }
 
-/* Історія — з роздільниками */
 .history-item {
   margin-bottom: 10px;
   border-bottom: 1px solid #eee;

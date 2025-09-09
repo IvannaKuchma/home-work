@@ -1,42 +1,42 @@
 import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axiosInstance';
-import { Category } from '../../shared/types/category';
+import axios from 'axios';
 
-interface CategoriesState {
-  data: Category[];
-  loading: boolean;
+export const fetchCategories = createAsyncThunk(
+  'category/fetchCategories',
+  async () => {
+    const res = await axios.get('http://localhost:3001/categories');
+    return res.data;
+  }
+);
+
+interface CategoryState {
+  data: any[];
+  status: 'idle' | 'loading' | 'succeeded' | 'failed';
   error: string | null;
 }
 
-const initialState: CategoriesState = {
+const initialState: CategoryState = {
   data: [],
-  loading: false,
+  status: 'idle',
   error: null,
 };
 
-
-export const fetchCategories = createAsyncThunk('categories/fetchAll', async () => {
-  const res = await axios.get('/categories');
-  return res.data as Category[];
-});
-
 const categorySlice = createSlice({
-  name: 'categories',
+  name: 'category',
   initialState,
   reducers: {},
   extraReducers: (builder) => {
     builder
       .addCase(fetchCategories.pending, (state) => {
-        state.loading = true;
-        state.error = null;
+        state.status = 'loading';
       })
       .addCase(fetchCategories.fulfilled, (state, action) => {
-        state.loading = false;
+        state.status = 'succeeded';
         state.data = action.payload;
       })
       .addCase(fetchCategories.rejected, (state, action) => {
-        state.loading = false;
-        state.error = action.error.message ?? 'Failed to fetch categories';
+        state.status = 'failed';
+        state.error = action.error.message || null;
       });
   },
 });

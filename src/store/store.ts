@@ -6,10 +6,12 @@ import historyReducer from './slices/historySlice';
 export const store = configureStore({
   reducer: {
     user: userReducer,
-    categories: categoryReducer,
-    histories: historyReducer,
+    category: categoryReducer,
+    history: historyReducer,
   },
 });
 
 export type RootState = ReturnType<typeof store.getState>;
 export type AppDispatch = typeof store.dispatch;
+
+export default store;

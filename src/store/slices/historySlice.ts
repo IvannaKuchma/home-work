@@ -1,23 +1,20 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from '../../utils/axiosInstance';
-import { HistoryItem } from '../../shared/types';
+import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from '@/utils/axiosInstance';
+import { History } from '@/shared/types/history';
 
-interface HistoryState {
-  data: HistoryItem[];
-  loading: boolean;
-  error: string | null;
-}
+export const fetchHistory = createAsyncThunk<History[]>(
+  'history/fetchAll',
+  async () => {
+    const res = await axios.get('/histories');
+    return res.data;
+  }
+);
 
-const initialState: HistoryState = {
-  data: [],
+const initialState = {
+  data: [] as History[],
   loading: false,
-  error: null,
+  error: null as string | null,
 };
-
-export const fetchHistory = createAsyncThunk('history/fetchAll', async () => {
-  const res = await axios.get('/histories');
-  return res.data as HistoryItem[];
-});
 
 const historySlice = createSlice({
   name: 'history',
@@ -35,7 +32,7 @@ const historySlice = createSlice({
       })
       .addCase(fetchHistory.rejected, (state, action) => {
         state.loading = false;
-        state.error = action.error.message ?? 'Failed to fetch history';
+        state.error = action.error.message || 'Error';
       });
   },
 });
