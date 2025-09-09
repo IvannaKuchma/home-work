@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { Provider } from 'react-redux';
-import { store } from '@/store/store';
+import  store  from '@/store/store';
 import { fetchUserById } from '@/store/slices/userSlice';
 import { fetchCategories } from '@/store/slices/categorySlice';
 import { fetchHistory } from '@/store/slices/historySlice';

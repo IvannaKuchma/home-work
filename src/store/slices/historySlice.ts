@@ -10,6 +10,7 @@ export const fetchHistory = createAsyncThunk<History[]>(
   }
 );
 
+
 const initialState = {
   data: [] as History[],
   loading: false,

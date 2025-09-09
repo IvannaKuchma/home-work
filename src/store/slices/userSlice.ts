@@ -1,25 +1,26 @@
-import { createSlice, createAsyncThunk } from '@reduxjs/toolkit';
-import axios from 'axios';
-
-export const fetchUserById = createAsyncThunk(
-  'user/fetchUserById',
-  async (id: string) => {
-    const res = await axios.get(`http://localhost:3001/users/${id}`);
-    return res.data;
-  }
-);
+ import { createAsyncThunk, createSlice } from '@reduxjs/toolkit';
+import axios from '@/utils/axiosInstance';
+import { User } from '@/shared/types/user';
 
 interface UserState {
-  data: any;
-  status: 'idle' | 'loading' | 'succeeded' | 'failed';
+  data: User | null;
+  loading: boolean;
   error: string | null;
 }
 
 const initialState: UserState = {
   data: null,
-  status: 'idle',
+  loading: false,
   error: null,
 };
+
+export const fetchUserById = createAsyncThunk<User, string>(
+  'user/fetchById',
+  async (id) => {
+    const res = await axios.get(`/users/${id}`);
+    return res.data;
+  }
+);
 
 const userSlice = createSlice({
   name: 'user',
@@ -28,17 +29,19 @@ const userSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(fetchUserById.pending, (state) => {
-        state.status = 'loading';
+        state.loading = true;
+        state.error = null;
       })
       .addCase(fetchUserById.fulfilled, (state, action) => {
-        state.status = 'succeeded';
+        state.loading = false;
         state.data = action.payload;
       })
       .addCase(fetchUserById.rejected, (state, action) => {
-        state.status = 'failed';
-        state.error = action.error.message || null;
+        state.loading = false;
+        state.error = action.error.message || 'Error';
       });
   },
 });
 
 export default userSlice.reducer;
+

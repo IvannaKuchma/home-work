@@ -1,20 +1,19 @@
 import React, { useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch, RootState } from '../store/store';
 import { fetchUserById } from '../store/slices/userSlice';
 import { fetchCategories } from '../store/slices/categorySlice';
-import { fetchHistory } from '../store/slices/historySlice'; 
+import { fetchHistory } from '../store/slices/historySlice';
+import { RootState, AppDispatch } from '../store/store';
 
 const MainPage: React.FC = () => {
   const dispatch = useDispatch<AppDispatch>();
-
   const user = useSelector((state: RootState) => state.user.data);
   const categories = useSelector((state: RootState) => state.category.data);
 
   useEffect(() => {
     dispatch(fetchUserById('1'));
     dispatch(fetchCategories());
-    dispatch(fetchHistory()); 
+    dispatch(fetchHistory());
   }, [dispatch]);
 
   return (
@@ -65,3 +64,4 @@ const MainPage: React.FC = () => {
 };
 
 export default MainPage;
+

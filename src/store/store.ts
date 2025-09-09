@@ -3,7 +3,7 @@ import userReducer from './slices/userSlice';
 import categoryReducer from './slices/categorySlice';
 import historyReducer from './slices/historySlice';
 
-export const store = configureStore({
+const store = configureStore({
   reducer: {
     user: userReducer,
     category: categoryReducer,
