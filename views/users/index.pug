@@ -1,0 +1,11 @@
+include ../layouts/header.pug
+
+h2 Список користувачів
+ul
+  each user in users
+    li
+      a(href=`/users/${user.id}`) #{user.name} (#{user.age} років)
+
+      
+
+include ../layouts/footer.pug

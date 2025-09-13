@@ -1,0 +1,12 @@
+<%- include('../layouts/header.ejs') %>
+
+<h2>Список статей</h2>
+<ul>
+  <% articles.forEach(article => { %>
+    <li>
+      <a href="/articles/<%= article.id %>"><%= article.title %></a>
+    </li>
+  <% }) %>
+</ul>
+
+<%- include('../layouts/footer.ejs') %>
