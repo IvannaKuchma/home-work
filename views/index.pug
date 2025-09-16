@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    meta(charset="utf-8")
+    title Home Page
+    link(rel="icon", href="/favicon.ico")
+    style.
+      body { font-family: Arial, sans-serif; background: #f0f0f0; margin: 0; padding: 0; }
+      header { background: #4CAF50; color: white; padding: 20px; text-align: center; }
+      .container { max-width: 600px; margin: 30px auto; padding: 20px; background: white; border-radius: 10px; box-shadow: 0 4px 12px rgba(0,0,0,0.1); }
+      a { margin: 5px; display: inline-block; text-decoration: none; color: #2196F3; }
+      a:hover { text-decoration: underline; }
+  body
+    header
+      h1 Express + Passport.js Project
+    .container
+      if user
+        p Hello, #{user.email}!
+        a(href="/protected") Go to Protected Page
+        a(href="/logout") Logout
+      else
+        p You are not logged in
+        a(href="/login") Login
+        a(href="/register") Register
