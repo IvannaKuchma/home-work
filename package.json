@@ -1,17 +1,23 @@
 {
-  "name": "theme-app",
+  "name": "express-jwt-project",
   "version": "1.0.0",
-  "description": "Express.js сервер з темами, cookies та favicon",
-  "main": "app.js",
+  "description": "Express.js проект з підтримкою PUG, EJS, Cookies та JWT",
+  "main": "server.js",
   "scripts": {
-    "start": "node app.js"
+    "start": "node server.js",
+    "dev": "nodemon server.js"
   },
+  "author": "Ivanka Kuchma",
+  "license": "MIT",
   "dependencies": {
-    "cookie-parser": "^1.4.6",
+    "cookie-parser": "^1.4.7",
+    "dotenv": "^16.4.5",
+    "ejs": "^3.1.10",
     "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.2",
     "pug": "^3.0.3"
   },
-  "author": "Твоє ім'я",
-  "license": "MIT"
+  "devDependencies": {
+    "nodemon": "^3.1.0"
+  }
 }
-

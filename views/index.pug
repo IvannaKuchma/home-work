@@ -2,15 +2,17 @@ doctype html
 html
   head
     meta(charset="utf-8")
-    title Тест теми
-    link(rel="icon", href="/favicon.ico")
-    link(rel="stylesheet", href="/styles.css?v=1")
+    title PUG Page
+    link(rel="icon" href="/favicon.ico")
+    link(rel="stylesheet", href="/styles.css")
   body(class=theme)
-    h1 Поточна тема: #{theme}
-
-    form(action="/theme/set" method="POST")
-      label(for="theme") Обери тему:
-      select(name="theme")
-        option(value="light" selected=theme==='light') Light
-        option(value="dark" selected=theme==='dark') Dark
-      button(type="submit") Зберегти
+    header
+      h1 PUG Сторінка
+      p Тема: #{theme}
+    .container
+      a(href="/") ← Назад
+      br
+      a(href="/set-theme/light") 
+        button.light-btn Встановити світлу тему
+      a(href="/set-theme/dark") 
+        button.dark-btn Встановити темну тему
