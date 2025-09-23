@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>CRUD Користувачі</title>
+<style>
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(to right, #6a11cb, #2575fc);
+    color: #333;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #2575fc;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 12px 15px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #6a11cb;
+    color: white;
+    text-transform: uppercase;
+}
+
+tr:hover {
+    background-color: #f0f0f0;
+}
+
+form {
+    display: grid;
+    grid-template-columns: 1fr 1fr auto;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+input, button {
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+}
+
+button {
+    background-color: #2575fc;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:hover {
+    background-color: #6a11cb;
+}
+</style>
+</head>
+<body>
+<div class="container">
+<h1>CRUD Користувачі</h1>
+
+<!-- Таблиця користувачів -->
+<table id="users-table">
+<thead>
+<tr><th>Ім'я</th><th>Email</th><th>Дії</th></tr>
+</thead>
+<tbody>
+<tr><td colspan="3">Завантаження...</td></tr>
+</tbody>
+</table>
+
+<!-- Форма додавання одного користувача -->
+<form id="add-user-form">
+<input type="text" name="name" placeholder="Ім'я" required>
+<input type="email" name="email" placeholder="Email" required>
+<button type="submit">Додати користувача</button>
+</form>
+
+<!-- Форма оновлення користувача -->
+<form id="update-user-form">
+<input type="text" name="id" placeholder="ID користувача" required>
+<input type="text" name="name" placeholder="Нове ім'я">
+<input type="email" name="email" placeholder="Новий email">
+<button type="submit">Оновити користувача</button>
+</form>
+
+<!-- Форма видалення користувача -->
+<form id="delete-user-form">
+<input type="text" name="id" placeholder="ID користувача" required>
+<button type="submit">Видалити користувача</button>
+</form>
+</div>
+
+<script>
+// Функція завантаження користувачів у таблицю
+async function fetchUsers() {
+    try {
+        const response = await fetch('/users');
+        const users = await response.json();
+        const tbody = document.querySelector('#users-table tbody');
+        if (users.length === 0) {
+            tbody.innerHTML = '<tr><td colspan="3">Користувачі відсутні</td></tr>';
+            return;
+        }
+        tbody.innerHTML = '';
+        users.forEach(user => {
+            const row = document.createElement('tr');
+            row.innerHTML = `
+                <td>${user.name}</td>
+                <td>${user.email}</td>
+                <td>
+                    <button onclick="fillUpdateForm('${user._id}','${user.name}','${user.email}')">Редагувати</button>
+                    <button onclick="deleteUser('${user._id}')">Видалити</button>
+                </td>
+            `;
+            tbody.appendChild(row);
+        });
+    } catch (err) {
+        console.error(err);
+        document.querySelector('#users-table tbody').innerHTML = '<tr><td colspan="3">Помилка завантаження</td></tr>';
+    }
+}
+
+// Підставляємо дані у форму оновлення
+function fillUpdateForm(id, name, email) {
+    const form = document.getElementById('update-user-form');
+    form.id.value = id;
+    form.name.value = name;
+    form.email.value = email;
+}
+
+// Додавання користувача
+document.getElementById('add-user-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.target;
+    const data = { name: form.name.value, email: form.email.value };
+    await fetch('/users', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    form.reset();
+    fetchUsers();
+});
+
+// Оновлення користувача
+document.getElementById('update-user-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const form = e.target;
+    const id = form.id.value;
+    const data = { name: form.name.value, email: form.email.value };
+    await fetch(`/users/${id}`, {
+        method: 'PATCH',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+    });
+    form.reset();
+    fetchUsers();
+});
+
+// Видалення користувача
+async function deleteUser(id) {
+    if (!confirm('Ви впевнені, що хочете видалити користувача?')) return;
+    await fetch(`/users/${id}`, { method: 'DELETE' });
+    fetchUsers();
+}
+
+// Форма видалення по ID
+document.getElementById('delete-user-form').addEventListener('submit', async e => {
+    e.preventDefault();
+    const id = e.target.id.value;
+    await fetch(`/users/${id}`, { method: 'DELETE' });
+    e.target.reset();
+    fetchUsers();
+});
+
+// Завантаження таблиці при старті
+fetchUsers();
+</script>
+</body>
+</html>
