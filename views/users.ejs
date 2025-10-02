@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Користувачі</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <header>
+    <h1>Список користувачів</h1>
+    <nav>
+      <a href="/">Головна</a>
+      <a href="/users">Користувачі</a>
+    </nav>
+  </header>
+
+  <main>
+    <form action="/users" method="post">
+      <input type="text" name="name" placeholder="Ім’я" required>
+      <input type="number" name="age" placeholder="Вік" required>
+      <button type="submit">Додати</button>
+    </form>
+
+    <ul>
+      <% users.forEach(user => { %>
+        <li><%= user.name %> — <%= user.age %> років</li>
+      <% }) %>
+    </ul>
+  </main>
+
+  <footer>
+    <p>© 2025 Express + MongoDB Demo</p>
+  </footer>
+</body>
+</html>
