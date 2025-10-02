@@ -1,0 +1,23 @@
+{
+  "name": "student-mongo-task",
+  "version": "1.0.0",
+  "description": "Навчальний проект для роботи з MongoDB (CRUD, Aggregation, Indexes)",
+  "main": "scripts/task1.js",
+  "scripts": {
+    "task1": "node scripts/task1.js",
+    "task2": "node scripts/task2.js",
+    "task3": "node scripts/task3.js"
+  },
+  "keywords": [
+    "mongodb",
+    "nodejs",
+    "crud",
+    "aggregation",
+    "indexes"
+  ],
+  "author": "Твоє ім'я",
+  "license": "MIT",
+  "dependencies": {
+    "mongodb": "^6.20.0"
+  }
+}
