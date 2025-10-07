@@ -1,4 +1,4 @@
-# Backend (Express + Mongoose) — home-work-69
+# Backend (Express + Mongoose) — home-work-70
 
 ## Опис
 Серверна частина на Node.js з використанням Express та Mongoose. Надає REST API для ресурсів `User` і `Item`.
