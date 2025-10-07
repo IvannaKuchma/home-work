@@ -1,12 +1,30 @@
-# Backend (Express + Mongoose) — home-work-70
+# Home Work 70
 
-## Опис
-Серверна частина на Node.js з використанням Express та Mongoose. Надає REST API для ресурсів `User` і `Item`.
+Це проєкт на Node.js з Express та MongoDB, розгорнутий через Docker.
 
-## Швидкий старт
-1. Клонуй репозиторій
-2. Скопіюй `.env.example` в `.env` і відредагуй при потребі
-3. Запусти Docker (Docker Desktop)
-4. Підніми сервіси:
+## Потрібне
+
+- [Docker](https://www.docker.com/)
+- [Node.js](https://nodejs.org/) (якщо хочеш запускати локально без Docker)
+
+## Як запустити через Docker
+
+1. Клонуй репозиторій:  
+
 ```bash
-docker compose up -d
+git clone <https://github.com/IvannaKuchma/home-work/tree/home-work-70>
+cd home-work-70;
+
+2. Побудуй і запусти контейнери:
+docker compose up -d --build
+Це запустить три контейнери:
+Backend: http://localhost:4000
+MongoDB: порт 27017 (для внутрішнього використання)
+Mongo Express: http://localhost:8081;
+
+3. Логін для Mongo Express:
+Username: admin
+Password: pass;
+
+4.Зупинити і видалити контейнери та томи:
+docker compose down -v
